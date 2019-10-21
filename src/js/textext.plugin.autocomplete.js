@@ -2,7 +2,7 @@
  * jQuery TextExt Plugin
  * http://textextjs.com
  *
- * @version 1.3.1
+ * @version 1.3.2
  * @copyright Copyright (C) 2011 Alex Gorbatchev. All rights reserved.
  * @license MIT License
  */
@@ -23,7 +23,7 @@
 	$.fn.textext.addPlugin('autocomplete', TextExtAutocomplete);
 
 	var p = TextExtAutocomplete.prototype,
-		
+
 		CSS_DOT            = '.',
 		CSS_SELECTED       = 'text-selected',
 		CSS_DOT_SELECTED   = CSS_DOT + CSS_SELECTED,
