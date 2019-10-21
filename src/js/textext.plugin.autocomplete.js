@@ -276,6 +276,7 @@
 				deleteKeyUp       : self.onAnyKeyUp,
 				backspaceKeyPress : self.onBackspaceKeyPress,
 				enterKeyPress     : self.onEnterKeyPress,
+				spaceKeyPress     : self.onSpaceKeyPress,
 				escapeKeyPress    : self.onEscapeKeyPress,
 				setSuggestions    : self.onSetSuggestions,
 				showDropdown      : self.onShowDropdown,
@@ -443,6 +444,30 @@
 
 		if(isEmpty || self.isDropdownVisible())
 			self.getSuggestions();
+	};
+
+	/**
+	 * Reacts to the `spaceKeyPress` event triggered by the TextExt core.
+	 *
+	 * @signature TextExtAutocomplete.onSpaceKeyPress(e)
+	 *
+	 * @param e {Object} jQuery event.
+	 *
+	 * @author sthallis
+	 * @date 2014/03/14
+	 * @id TextExtAutocomplete.onSpaceKeyPress
+	 */
+	p.onSpaceKeyPress = function(e)
+	{
+		var self = this;
+		var result = self.val();
+		var item = [result.replace(/\s/g,"")];
+		var er = new  RegExp(/^[A-Za-z0-9_\-\.]+@[A-Za-z0-9_\-\.]{2,}\.[A-Za-z0-9]{2,}(\.[A-Za- 0-9])?/);
+		if(er.test(item)){
+			self.trigger('setSuggestions',{ result : self.itemManager().filter(item, '') });
+			self.trigger('enterKeyPress');
+			self.val('');
+		}
 	};
 
 	/**

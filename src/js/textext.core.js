@@ -258,6 +258,7 @@
 		 *         9   : 'tab',
 		 *         13  : 'enter!',
 		 *         27  : 'escape!',
+		 *         32  : 'space',
 		 *         37  : 'left',
 		 *         38  : 'up!',
 		 *         39  : 'right',
@@ -460,6 +461,7 @@
 				9   : 'tab',
 				13  : 'enter!',
 				27  : 'escape!',
+				32  : 'space',
 				37  : 'left',
 				38  : 'up!',
 				39  : 'right',
@@ -712,7 +714,8 @@
 		$.extend(true, itemManager, self.opts(OPT_EXT + '.item.manager'));
 		$.extend(true, self, self.opts(OPT_EXT + '.*'), self.opts(OPT_EXT + '.core'));
 		
-		self.originalWidth = input.outerWidth();
+		//self.originalWidth = input.outerWidth();
+		self.originalWidth = '100%'; //easier just wrap with other element to change width
 
 		self.invalidateBounds();
 
@@ -1142,7 +1145,10 @@
 	p.onSetFormData = function(e, data)
 	{
 		var self = this;
-		self.hiddenInput().val(self.serializeData(data));
+		if (self.hiddenInput().val() !== self.serializeData(data))
+		{
+			self.hiddenInput().val(self.serializeData(data)).change();
+		}
 	};
 
 	/**
