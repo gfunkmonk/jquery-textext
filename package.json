@@ -2,9 +2,9 @@
 	"name"          : "jquery-textext",
 	"version"       : "1.3.2",
 	"dependencies"  : {
-		"stylus"    : ">=0.50.0",
-		"soda"      : ">=0.2.0",
-		"uglify-js" : ">=3.1.0"
+		"stylus"    : ">=0.54.2",
+		"soda"      : ">=0.2.5",
+		"uglify-js" : ">=1.3.1"
 	}
 }
 
