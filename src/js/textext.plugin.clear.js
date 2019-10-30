@@ -15,7 +15,7 @@
 	 * @date 2012/02/19
 	 * @id TextExtClear
 	 */
-	function TextExtClear() {};
+	function TextExtClear() {}
 
 	$.fn.textext.TextExtClear = TextExtClear;
 	$.fn.textext.addPlugin('clear', TextExtClear);

@@ -18,7 +18,7 @@
 	 * @date 2011/08/19
 	 * @id TextExt
 	 */
-	function TextExt() {};
+	function TextExt() {}
 
 	/**
 	 * ItemManager is used to seamlessly convert between string that come from the user input to whatever 
@@ -44,7 +44,7 @@
 	 * @date 2011/08/19
 	 * @id ItemManager
 	 */
-	function ItemManager() {};
+	function ItemManager() {}
 
 	/**
 	 * TextExtPlugin is a base class for all plugins. It provides common methods which are reused
@@ -67,7 +67,7 @@
 	 * @date 2011/08/19
 	 * @id TextExtPlugin
 	 */
-	function TextExtPlugin() {};
+	function TextExtPlugin() {}
 
 	var stringify = (JSON || {}).stringify,
 		slice     = Array.prototype.slice,
@@ -500,7 +500,7 @@
 
 		// name.length here should be zero
 		return result;
-	};
+	}
 
 	/**
 	 * Hooks up specified events in the scope of the current object.
@@ -528,12 +528,12 @@
 
 		for(event in args)
 			bind(event, args[event]);
-	};
+	}
 
 	function formDataObject(input, form)
 	{
 		return { 'input' : input, 'form' : form };
-	};
+	}
 
 	//--------------------------------------------------------------------------------
 	// ItemManager core component
@@ -1589,7 +1589,7 @@
 
 (function($)
 {
-	function TextExtIE9Patches() {};
+	function TextExtIE9Patches() {}
 
 	$.fn.textext.TextExtIE9Patches = TextExtIE9Patches;
 	$.fn.textext.addPatch('ie9',TextExtIE9Patches);

@@ -15,7 +15,7 @@ function testFocusFunctionality(browser)
 		.fireEvent(textarea, 'blur')
 		.waitForNotVisible(focus)
 		;
-};
+}
 
 function testFocus(exampleId)
 {
@@ -30,14 +30,14 @@ function testFocus(exampleId)
 			.and(common.screenshot('focus-' + exampleId))
 			;
 	};
-};
+}
 
 function run(browser)
 {
 	browser
 		.and(testFocus('focus'))
 	;
-};
+}
 
 module.exports = run;
 

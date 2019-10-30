@@ -22,7 +22,7 @@
 	 * @date 2011/08/18
 	 * @id TextExtFilter
 	 */
-	function TextExtFilter() {};
+	function TextExtFilter() {}
 
 	$.fn.textext.TextExtFilter = TextExtFilter;
 	$.fn.textext.addPlugin('filter', TextExtFilter);

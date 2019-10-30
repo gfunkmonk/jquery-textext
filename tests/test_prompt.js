@@ -16,7 +16,7 @@ function testPrompt(exampleId, secondary)
 			.and(common.screenshot('prompt-' + exampleId))
 			;
 	};
-};
+}
 
 function run(browser)
 {
@@ -31,7 +31,7 @@ function run(browser)
 		}))
 		.and(testPrompt('prompt-with-tags', common.testTagFunctionality()))
 	;
-};
+}
 
 module.exports = run;
 

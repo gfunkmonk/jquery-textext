@@ -16,7 +16,7 @@
 	 * @date 2011/08/18
 	 * @id TextExtFocus
 	 */
-	function TextExtFocus() {};
+	function TextExtFocus() {}
 
 	$.fn.textext.TextExtFocus = TextExtFocus;
 	$.fn.textext.addPlugin('focus', TextExtFocus);

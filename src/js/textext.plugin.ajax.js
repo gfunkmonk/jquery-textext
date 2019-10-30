@@ -19,7 +19,7 @@
 	 * @date 2011/08/16
 	 * @id TextExtAjax
 	 */
-	function TextExtAjax() {};
+	function TextExtAjax() {}
 
 	$.fn.textext.TextExtAjax = TextExtAjax;
 	$.fn.textext.addPlugin('ajax', TextExtAjax);

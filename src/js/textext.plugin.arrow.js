@@ -17,7 +17,7 @@
 	 * @date 2011/12/27
 	 * @id TextExtArrow
 	 */
-	function TextExtArrow() {};
+	function TextExtArrow() {}
 
 	$.fn.textext.TextExtArrow = TextExtArrow;
 	$.fn.textext.addPlugin('arrow', TextExtArrow);
