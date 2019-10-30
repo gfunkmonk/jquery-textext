@@ -18,7 +18,7 @@
 	 * @date 2011/08/19
 	 * @id TextExtTags
 	 */
-	function TextExtTags() {};
+	function TextExtTags() {}
 
 	$.fn.textext.TextExtTags = TextExtTags;
 	$.fn.textext.addPlugin('tags', TextExtTags);

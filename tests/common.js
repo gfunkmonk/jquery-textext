@@ -18,17 +18,17 @@ function log(cmd, args)
 	args = Array.prototype.slice.apply(arguments);
 	cmd  = args.shift();
 	console.log(' \x1b[33m%s\x1b[0m%s', cmd, args.length > 0 ? ': ' + args.join(', ') : '');
-};
+}
 
 function echo(msg)
 {
 	log('echo', msg);
-};
+}
 
 function verifyTextExt(browser)
 {
 	browser.assertElementPresent(textarea);
-};
+}
 
 function keyPress(charCode)
 {
@@ -39,17 +39,17 @@ function keyPress(charCode)
 			.keyUp(textarea, '\\' + charCode)
 			;
 	};
-};
+}
 
 function backspace(browser)
 {
 	browser.and(keyPress(8));
-};
+}
 	
 function tagXPath(value)
 {
 	return '//div[contains(@class, "text-core")]//div[contains(@class, "text-tags")]//span[text()="' + value + '"]/../..';
-};
+}
 
 function suggestionsXPath(selected, index)
 {
@@ -57,37 +57,37 @@ function suggestionsXPath(selected, index)
 	selected = selected == true ? '[contains(@class, "text-selected")]' : '';
 
 	return '//div[contains(@class, "text-core")]//div[contains(@class, "text-dropdown")]//div[contains(@class, "text-suggestion")]' + index + selected;
-};
+}
 
 function assertSuggestionItem(test)
 {
 	return function(browser) { browser.assertVisible(suggestionsXPath() + '//span[text()="Basic"]') };
-};
+}
 
 function assertOutput(value)
 {
 	return function(browser) { browser.assertElementPresent('//pre[@id="output"][contains(text(), \'' + value + '\')]') };
-};
+}
 
 function assertNotOutput(value)
 {
 	return function(browser) { browser.assertElementNotPresent('//pre[@id="output"][contains(text(), \'' + value + '\')]') };
-};
+}
 
 function assertTagPresent(value)
 {
 	return function(browser) { browser.assertElementPresent(tagXPath(value)) };
-};
+}
 
 function assertTagNotPresent(value)
 {
 	return function(browser) { browser.assertElementNotPresent(tagXPath(value)) };
-};
+}
 
 function enterKey(browser)
 {
 	browser.and(keyPress(13));
-};
+}
 
 function typeTag(value)
 {
@@ -99,7 +99,7 @@ function typeTag(value)
 			.and(enterKey)
 			;
 	};
-};
+}
 
 function clearInput(browser)
 {
@@ -107,17 +107,17 @@ function clearInput(browser)
 		.and(keyPress(27))
 		.type(textarea, '')
 		;
-};
+}
 
 function focusInput(browser)
 {
 	browser.fireEvent(textarea, 'focus');
-};
+}
 
 function defaultWrap(value)
 {
 	return value;
-};
+}
 
 function typeAndValidateTag(value, wrap)
 {
@@ -129,7 +129,7 @@ function typeAndValidateTag(value, wrap)
 			.and(assertTagPresent(wrap(value)))
 			;
 	};
-};
+}
 
 function closeTag(value, wrap)
 {
@@ -141,7 +141,7 @@ function closeTag(value, wrap)
 			.and(assertTagNotPresent(wrap(value)))
 			;
 	};
-};
+}
 
 function screenshot(name)
 {
@@ -149,7 +149,7 @@ function screenshot(name)
 	{
 		// browser.captureEntirePageScreenshot(__dirname + '/' + name + ' (' + (new Date().toUTCString().replace(/:/g, '.')) + ').png');
 	};
-};
+}
 
 function createBrowser()
 {
@@ -159,7 +159,7 @@ function createBrowser()
 		url     : 'http://localhost:4000',
 		browser : 'firefox'
 	});
-};
+}
 
 function testAjaxFunctionality()
 {
@@ -172,7 +172,7 @@ function testAjaxFunctionality()
 			.and(assertSuggestionItem('Basic'))
 			;
 	}
-};
+}
 
 function testArrowFunctionality()
 {
@@ -197,7 +197,7 @@ function testArrowFunctionality()
 			.assertNotVisible(prompt)
 			;
 	};
-};
+}
 
 function testFilterFunctionality()
 {
@@ -215,7 +215,7 @@ function testFilterFunctionality()
 			.and(assertNotOutput('world'))
 			;
 	};
-};
+}
 
 function testTagFunctionality(opts)
 {
@@ -236,7 +236,7 @@ function testTagFunctionality(opts)
 		var match = JSON.stringify(list).replace(/^\[|\]$/g, '');
 
 		return assertOutput(match);
-	};
+	}
 
 	return function(browser)
 	{
@@ -272,7 +272,7 @@ function testTagFunctionality(opts)
 			.and(assertTagNotPresent('world'))
 			;
 	};
-};
+}
 
 function testPromptFunctionality(secondary)
 {
@@ -285,7 +285,7 @@ function testPromptFunctionality(secondary)
 			.assertNotVisible(prompt)
 			;
 	};
-};
+}
 
 function testAutocompleteFunctionality(finalAssert)
 {
@@ -344,7 +344,7 @@ function testAutocompleteFunctionality(finalAssert)
 			.and(finalAssert)
 			;
 	};
-};
+}
 
 function testPlainInputFunctionality()
 {
@@ -358,7 +358,7 @@ function testPlainInputFunctionality()
 			.and(assertOutput('"Hello world"'))
 			;
 	};
-};
+}
 
 function runModule(run)
 {
@@ -376,7 +376,7 @@ function runModule(run)
 			echo('ALL DONE');
 		})
 	;
-};
+}
 
 module.exports = {
 	log                           : log,

@@ -16,7 +16,7 @@ function testTags(exampleId, wrap)
 			.and(common.screenshot('tags-' + exampleId))
 			;
 	};
-};
+}
 
 function run(browser)
 {
@@ -27,7 +27,7 @@ function run(browser)
 		.and(testTags('tags-with-custom-rendering'))
 		.and(testTags('tags-with-custom-data-objects', { object: function(v) { return { name : v } }} ))
 	;
-};
+}
 
 module.exports = run;
 

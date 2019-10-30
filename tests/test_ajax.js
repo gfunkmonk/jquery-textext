@@ -15,7 +15,7 @@ function beginAjaxTest(exampleId, test)
 			.and(common.screenshot('ajax-' + exampleId))
 			;
 	};
-};
+}
 
 function testLoadingMessage()
 {
@@ -37,7 +37,7 @@ function testLoadingMessage()
 				1000
 			);
 		};
-	};
+	}
 
 	return function(browser)
 	{
@@ -71,7 +71,7 @@ function testLoadingMessage()
 			})
 		);
 	};
-};
+}
 
 function testWithTags()
 {
@@ -89,7 +89,7 @@ function testWithTags()
 			})
 		);
 	};
-};
+}
 
 function run(browser)
 {
@@ -97,7 +97,7 @@ function run(browser)
 		.and(testLoadingMessage())
 		.and(testWithTags())
 	;
-};
+}
 
 module.exports = run;
 

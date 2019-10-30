@@ -16,7 +16,7 @@ function testFilter(exampleId)
 			.and(common.screenshot('filter-' + exampleId))
 			;
 	};
-};
+}
 
 function testTags()
 {
@@ -28,7 +28,7 @@ function testTags()
 			.and(common.typeAndValidateTag('Go'))
 			;
 	};
-};
+}
 
 function run(browser)
 {
@@ -42,7 +42,7 @@ function run(browser)
 		.and(testFilter('autocomplete-with-filter'))
 		.and(testFilter('filter'))
 	;
-};
+}
 
 module.exports = run;
 

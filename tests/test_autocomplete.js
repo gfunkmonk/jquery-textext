@@ -16,7 +16,7 @@ function testAutocomplete(exampleId, finalAssert)
 			.and(common.screenshot('autocomplete-' + exampleId))
 			;
 	};
-};
+}
 
 function run(browser)
 {
@@ -27,7 +27,7 @@ function run(browser)
 		.and(testAutocomplete('autocomplete-with-tags', common.testTagFunctionality()))
 		.and(testAutocomplete('autocomplete-with-tags-and-filter', common.testFilterFunctionality()))
 	;
-};
+}
 
 module.exports = run;
 
