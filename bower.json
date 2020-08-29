@@ -23,7 +23,7 @@
     "tests"
   ],
   "dependencies": {
-    "uglifyjs": "~2.0.0",
+    "uglifyjs": "~https://github.com/mishoo/UglifyJS-old.git#ad80428a6fa78cef1d5e31e8be087e5851c1d8d0",
     "soda": "git://github.com/LearnBoost/soda.git#master",
     "stylus": "~0.54.2"
   }
